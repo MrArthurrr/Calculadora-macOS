@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora do MacOS</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="style/MacOS logo.png">
+</head>
+<body>
+    <div class="calculadora">
+        <div class="barra-titulo">
+            <div class="botoes-titulo">
+                <span class="botao-fechar"></span>
+                <span class="botao-minimizar"></span>
+                <span class="botao-expandir"></span>
+            </div>
+        </div>
+        <section class="tela">
+            0
+        </section>
+        <table class="botoes">
+            <tr>
+                <td><button id="limpar" class="botao limpar">AC</button></td>
+                <td><button id="trocarSinal" class="botao trocarSinal">+/-</button></td>
+                <td><button id="percentagem" class="botao percentagem">%</button></td>
+                <td><button id="divisao" class="botao operacao divisao">÷</button></td>
+            </tr>
+            <tr>
+                <td><button id="sete" class="botao numero">7</button></td>
+                <td><button id="oito" class="botao numero">8</button></td>
+                <td><button id="nove" class="botao numero">9</button></td>
+                <td><button id="multiplicacao" class="botao operacao multiplicacao">×</button></td>
+            </tr>
+            <tr>
+                <td><button id="quatro" class="botao numero">4</button></td>
+                <td><button id="cinco" class="botao numero">5</button></td>
+                <td><button id="seis" class="botao numero">6</button></td>
+                <td><button id="subtracao" class="botao operacao subtracao">−</button></td>
+            </tr>
+            <tr>
+                <td><button id="um" class="botao numero">1</button></td>
+                <td><button id="dois" class="botao numero">2</button></td>
+                <td><button id="tres" class="botao numero">3</button></td>
+                <td><button id="soma" class="botao operacao soma">+</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button id="zero" class="botao zero botao-zero">0</button></td>
+                <td><button id="ponto" class="botao ponto botao-ponto">.</button></td>
+                <td><button id="igual" class="botao botao-igual">=</button></td>
+            </tr>
+        </table>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

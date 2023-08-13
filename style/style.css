@@ -1,0 +1,157 @@
+body {
+  background-image: url(Wallpaper\ 2.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.calculadora {
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  font-family: "Helvetica", Arial, sans-serif; 
+  position: relative;
+  background-color: #454545b3;
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px)
+}
+
+.barra-titulo {
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.botoes-titulo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.botoes-titulo span {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.botao-fechar {
+  background-color: #ff5f57;
+}
+
+.botao-minimizar {
+  background-color: #ffbd2e;
+}
+
+.botao-expandir {
+  background-color: #28ca42;
+}
+
+.tela {
+  color: white;
+  height: 70px;
+  padding: 16px;
+  font-size: 50px;
+  line-height: 95px;
+  text-align: right;
+  position: relative;
+  margin-top: 15px;
+}
+
+.botoes {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+}
+
+.botao {
+  width: 100%;
+  height: 64px;
+  font-size: 24px;
+  text-align: center;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.botao.operacao {
+  background-color: #f1a03b;
+  color: white;
+}
+
+.botao.zero {
+  width: 100%;
+  border-bottom-left-radius: 12px;
+}
+
+.botao.numero,
+.botao.zero {
+  background-color: #73737399;
+  color: white;
+}
+
+.botao-igual {
+  background-color: #f1a03b;
+  color: white;
+  border-bottom-right-radius: 12px; 
+}
+
+.botao.limpar,
+.botao.percentagem {
+  background-color: #59595999;
+  color: white;
+}
+
+#trocarSinal {
+  background-color: #59595999;
+  color: white;
+}
+
+.botao.ponto {
+  background-color: #73737399;
+  color: white;
+}
+
+#sete:active,
+#oito:active,
+#nove:active,
+#quatro:active,
+#cinco:active,
+#seis:active,
+#um:active,
+#dois:active,
+#tres:active,
+#zero:active,
+#ponto:active {
+  background-color: #59595999;
+}
+
+#limpar:active,
+#percentagem:active,
+#trocarSinal:active {
+  background-color: #73737399;
+}
+
+#divisao:active,
+#multiplicacao:active,
+#subtracao:active,
+#igual:active,
+#soma:active {
+  background-color: #b6750b;
+}
