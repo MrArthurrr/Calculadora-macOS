@@ -30,6 +30,9 @@ function atualizarTela() {
 function atualizarBotaoAC() {
     const botaoAC = document.getElementById('limpar');
     botaoAC.textContent = operadorAtual === '0' ? 'AC' : 'C';
+    if (botaoAC.textContent === 'AC') {
+        resultado = 0;
+    }
 }
 
 function mostrarError() {
@@ -70,15 +73,26 @@ function calcular() {
     operacao = null;
     operadorAnterior = '';
     atualizarTela();
-    atualizarBotaoAC();
+    document.getElementById('limpar').textContent = 'AC';
 }
 
 function apagarNumeroCompleto() {
-    operadorAtual = '0';
-    operadorAnterior = '';
-    operacao = null;
-    resultado = 0;
+    if (operadorAtual !== '0') {
+        operadorAtual = '0';
+        operadorAnterior = '';
+        operacao = null;
+        resultado = 0;
+    } else {
+        operadorAtual = '0';
+    }
     atualizarTela();
+    atualizarBotaoAC();
+}
+
+function apagarUltimoNumero() {
+    operadorAtual = '0';
+    atualizarTela();
+    atualizarBotaoAC();
 }
 
 function clicarNumero(numero) {
@@ -168,13 +182,9 @@ document.getElementById('ponto').addEventListener('click', () => {
 });
 
 document.getElementById('limpar').addEventListener('click', () => {
-    if (tela.textContent === 'Error') {
-        operadorAtual = '0';
-        atualizarTela();
-    } else {
-        apagarNumeroCompleto();
-        atualizarBotaoAC();
-    }
+    operadorAtual = '0';
+    atualizarTela();
+    atualizarBotaoAC();
 });
 
 document.getElementById('soma').addEventListener('click', () => clicarOperacao('+'));
