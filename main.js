@@ -194,3 +194,39 @@ document.getElementById('divisao').addEventListener('click', () => clicarOperaca
 document.getElementById('igual').addEventListener('click', calcular);
 document.getElementById('trocarSinal').addEventListener('click', trocarSinal);
 document.getElementById('percentagem').addEventListener('click', calcularPercentagem);
+
+//Código para movimentar a janelinha da calculadora
+
+const barraTitulo = document.querySelector('.barra-titulo');
+const arrastaraJanela = document.querySelector('.calculadora');
+let arrastando = false;
+let posicaoInicial = [0, 0];
+let posicaoFinal = [0, 0];
+
+barraTitulo.addEventListener('mousedown', mudarPosicao);
+document.addEventListener('mouseup', parado);
+document.addEventListener('mousemove', atualizarPosicao);
+
+function mudarPosicao(e) {
+  arrastando = true;
+  posicaoInicial = [
+    barraTitulo.offsetLeft - e.clientX,
+    barraTitulo.offsetTop - e.clientY
+  ];
+}
+
+function parado() {
+  arrastando = false;
+}
+
+function atualizarPosicao(e) {
+    if (!arrastando) return;
+  
+    e.preventDefault();
+  
+    const novaPosicaoX = e.clientX + posicaoInicial[0];
+    const novaPosicaoY = e.clientY + posicaoInicial[1];
+  
+    arrastaraJanela.style.left = novaPosicaoX + 'px';
+    arrastaraJanela.style.top = novaPosicaoY + 'px';
+}

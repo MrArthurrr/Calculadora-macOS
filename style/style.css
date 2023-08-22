@@ -20,7 +20,7 @@ body {
   position: relative;
   background-color: #454545b3;
   -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px)
+  backdrop-filter: blur(40px);
 }
 
 .barra-titulo {
