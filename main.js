@@ -198,35 +198,31 @@ document.getElementById('percentagem').addEventListener('click', calcularPercent
 //Código para movimentar a janelinha da calculadora
 
 const barraTitulo = document.querySelector('.barra-titulo');
-const arrastaraJanela = document.querySelector('.calculadora');
+const calculadora = document.querySelector('.calculadora');
 let arrastando = false;
 let posicaoInicial = [0, 0];
-let posicaoFinal = [0, 0];
 
-barraTitulo.addEventListener('mousedown', mudarPosicao);
-document.addEventListener('mouseup', parado);
-document.addEventListener('mousemove', atualizarPosicao);
+function arrastarJanela(e) {
+  if (!arrastando) return;
 
-function mudarPosicao(e) {
+  const novaPosicaoX = e.clientX + posicaoInicial[0];
+  const novaPosicaoY = e.clientY + posicaoInicial[1];
+
+  calculadora.style.left = novaPosicaoX + 'px';
+  calculadora.style.top = novaPosicaoY + 'px';
+}
+
+barraTitulo.addEventListener('mousedown', (e) => {
   arrastando = true;
+  const estilodaCalculadora = window.getComputedStyle(calculadora);
   posicaoInicial = [
-    barraTitulo.offsetLeft - e.clientX,
-    barraTitulo.offsetTop - e.clientY
+    parseInt(estilodaCalculadora.left) - e.clientX,
+    parseInt(estilodaCalculadora.top) - e.clientY
   ];
-}
+});
 
-function parado() {
+document.addEventListener('mouseup', () => {
   arrastando = false;
-}
+});
 
-function atualizarPosicao(e) {
-    if (!arrastando) return;
-  
-    e.preventDefault();
-  
-    const novaPosicaoX = e.clientX + posicaoInicial[0];
-    const novaPosicaoY = e.clientY + posicaoInicial[1];
-  
-    arrastaraJanela.style.left = novaPosicaoX + 'px';
-    arrastaraJanela.style.top = novaPosicaoY + 'px';
-}
+document.addEventListener('mousemove', arrastarJanela);
