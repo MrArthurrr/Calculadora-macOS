@@ -156,3 +156,41 @@ body {
 #soma:active {
   background-color: #b6750b;
 }
+
+.tela-de-carregamento {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.appleLogo {
+  text-align: center;
+}
+
+.appleLogo img {
+  max-width: 80px;
+}
+
+.barra {
+  height: 4px;
+  background-color: white;
+  margin-top: 40px;
+  animation: loading 3s infinite;
+  border-radius: 50px;
+}
+
+@keyframes loading {
+  0% {
+      width: 0;
+  }
+  100% {
+      width: 200px;
+  }
+}

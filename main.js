@@ -226,3 +226,15 @@ document.addEventListener('mouseup', () => {
 });
 
 document.addEventListener('mousemove', arrastarJanela);
+
+//Tela de carregamento
+
+setTimeout(function () {
+    const telaCarregamentoEvent = new Event("telaCarregando");
+    document.dispatchEvent(telaCarregamentoEvent);
+}, 3000);
+
+document.addEventListener("telaCarregando", function () {
+    const barraDeCarregamento = document.querySelector(".tela-de-carregamento");
+    barraDeCarregamento.style.display = "none";
+});
