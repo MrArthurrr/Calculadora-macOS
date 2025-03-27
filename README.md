@@ -18,11 +18,3 @@ Desenvolvi este projeto há dois anos porque tive vontade de fazer uma réplica 
 - Mover a janela da calculadora
 
 ![Gif calculadora](https://github.com/user-attachments/assets/6ab5a99e-57ed-4510-a9a3-5aedfb9a1488)
-
-
-## Instalar
-
-Caso queira copiar para o seu computador abra o seu terminal no vscode e digite:
-
-   ```bash
-   git clone https://github.com/MrArthurrr/Calculadora-macOS.git
